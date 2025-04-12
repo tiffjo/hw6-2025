@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
 	document.querySelector("#play").addEventListener("click", function() {
 		video.play();
 		volumeDisplay.style.display="block";
-		// volumeDisplay.innerHTML=video.volume*100 + "%";
+		volumeDisplay.innerHTML=video.volume*100 + "%";
 		// volumeSpan.textContent= '${Math.round(video.volume * 100)}%';
 		document.querySelector("#volume").innerHTML=video.volume*100 + "%";
 	});
