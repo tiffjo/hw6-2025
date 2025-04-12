@@ -3,16 +3,26 @@ var video;
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	video=document.querySelector("#player1");
+	volumeDisplay=document.querySelector("#volume");
 	video.autoplay=false;
 	video.loop=false;
+	video.volume = 1.0;
 	video.load();
 
-	// set volume
+	//hide volume display before
+	volumeDisplay.style.display="none";
+
+
+	//set volume
 	document.querySelector("#volume").innerHTML=video.volume*100 + "%";
-	
+	});
+
 	// play video
 	document.querySelector("#play").addEventListener("click", function() {
 		video.play();
+		volumeDisplay.style.display="block";
+		// volumeDisplay.innerHTML=video.volume*100 + "%";
+		// volumeSpan.textContent= '${Math.round(video.volume * 100)}%';
 		document.querySelector("#volume").innerHTML=video.volume*100 + "%";
 	});
 
